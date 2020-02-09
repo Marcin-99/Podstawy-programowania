@@ -9,7 +9,7 @@
 
 
 
-**Wyjście z tymi danymi wejściowymi:**
+**Wyjście po wykonaniu programu:**
 
 
 
