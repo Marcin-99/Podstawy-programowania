@@ -2,7 +2,6 @@
 
 
 
-![](README.img/zadanie.png)
 
 
 
