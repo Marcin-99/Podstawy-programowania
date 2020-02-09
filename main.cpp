@@ -29,6 +29,7 @@ bool sprawdz_identyfokatory(string *identyfikatory, int ilosc_identyfikatorow);
 void wypisz_dane(klient *klienci, towar *towary, transakcja *transakcje, int ilosc_klientow, int ilosc_towarow, int ilosc_transakcji);
 void zlicz_ceny(laczny_koszt *lista_miast, int ilosc_miast);
 
+
 int main()
 {
 	const int MAX_N = 100;
@@ -45,7 +46,6 @@ int main()
 
     string id_klienci[ilosc_klientow];
     string id_towary[ilosc_towarow];
-
 
 	for (int i = 0; i < ilosc_klientow; i++)
 	{
@@ -93,6 +93,7 @@ int main()
 	return 0;
 }
 
+
 //funkcja wczytuje każdy plik do osobnej tabeli (tutaj: zmienna *tablica), linia po linii i zaznacza, ile każda tabela ma elementów (tutaj: &i)
 void podziel_pliki(string *tablica, string nazwa_pliku, int &i)
 {
@@ -115,6 +116,7 @@ void podziel_pliki(string *tablica, string nazwa_pliku, int &i)
 
 	plik.close();
 };
+
 
 //funkcja dzieli każdy wiersz na 3 kolumny w tabeli stringów (tutaj: *str), które potem wczytuje do odpowiednich elementów danej struktury
 void podziel_wiersz(string *str, string dane_do_analizy)
@@ -140,10 +142,10 @@ void podziel_wiersz(string *str, string dane_do_analizy)
         }
         else
             slowo += tablica_znakow[i];
-
         i++;
     }
 }
+
 
 //funkcja sprawdza, czy każdy klient i towar ma unikatowy identyfikator (po to tylko zostały stworzone tablice id_klienci i id_towary)
 //funkcja zwraca true jeśli duplikat się pojawił, false jeśli nie
@@ -170,6 +172,7 @@ bool sprawdz_identyfokatory(string *identyfikatory, int ilosc_identyfikatorow)
     return czy_sa_duplikaty;
 }
 
+
 //funkcja wykorzystana dopiero w następnej funkcji
 // funkcja zlicza ceny każdego towaru w każdym mieście i wyświetla
 // każde miasto tylko raz (stąd np. nadanie wartości lista_miast.miasto = "miasto wykorzystane")
@@ -193,6 +196,7 @@ void zlicz_ceny(laczny_koszt *lista_miast, int ilosc_miast)
     }
 
 }
+
 
 //funkcja razem z poprzednią wypisuje odpowiednie dane
 void wypisz_dane(klient *klienci, towar *towary, transakcja *transakcje, int ilosc_klientow, int ilosc_towarow, int ilosc_transakcji)
