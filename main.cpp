@@ -31,7 +31,7 @@ void zlicz_ceny(laczny_koszt *lista_miast, int ilosc_miast);
 
 int main()
 {
-	int MAX_N = 100;
+	const int MAX_N = 100;
 	string tablica_linii_klientow[MAX_N], tablica_linii_towarow[MAX_N], tablica_linii_transakcji[MAX_N];
 	int ilosc_klientow=0, ilosc_towarow=0, ilosc_transakcji=0;
 
