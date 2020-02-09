@@ -1,0 +1,5 @@
+1 maslo 13.4
+2 samochod 65.24
+3 arbuz 11.21
+4 sliwki 54.12
+5 makrela 11.26
