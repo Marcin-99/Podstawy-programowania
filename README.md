@@ -1,7 +1,7 @@
 ***Treść zadania:***
 
 
-
+![](README.img/zadanie.png)
 
 
 
