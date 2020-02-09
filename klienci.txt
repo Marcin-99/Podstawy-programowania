@@ -1,0 +1,8 @@
+1 Marcin Gdansk
+2 Patrycja Bydgoszcz
+3 Adam Warszawa
+4 Alicja Poznan
+5 Piotr Krakow
+6 Kasia Wroclaw
+7 Andrzej Olsztyn
+8 Basia Olsztyn
