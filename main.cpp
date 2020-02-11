@@ -32,46 +32,46 @@ void zlicz_ceny(laczny_koszt *lista_miast, int ilosc_miast);
 
 int main()
 {
-	const int MAX_N = 100;
-	string tablica_linii_klientow[MAX_N], tablica_linii_towarow[MAX_N], tablica_linii_transakcji[MAX_N];
-	int ilosc_klientow=0, ilosc_towarow=0, ilosc_transakcji=0;
+    const int MAX_N = 100;
+    string tablica_linii_klientow[MAX_N], tablica_linii_towarow[MAX_N], tablica_linii_transakcji[MAX_N];
+    int ilosc_klientow=0, ilosc_towarow=0, ilosc_transakcji=0;
 
-	podziel_pliki(tablica_linii_klientow, "klienci.txt", ilosc_klientow);
-	podziel_pliki(tablica_linii_towarow, "towary.txt", ilosc_towarow);
-	podziel_pliki(tablica_linii_transakcji, "transakcje.txt", ilosc_transakcji);
+    podziel_pliki(tablica_linii_klientow, "klienci.txt", ilosc_klientow);
+    podziel_pliki(tablica_linii_towarow, "towary.txt", ilosc_towarow);
+    podziel_pliki(tablica_linii_transakcji, "transakcje.txt", ilosc_transakcji);
 
-	klient tablica_klientow[ilosc_klientow];
-	towar tablica_towarow[ilosc_towarow];
-	transakcja tablica_transakcji[ilosc_transakcji];
+    klient tablica_klientow[ilosc_klientow];
+    towar tablica_towarow[ilosc_towarow];
+    transakcja tablica_transakcji[ilosc_transakcji];
 
     string id_klienci[ilosc_klientow];
     string id_towary[ilosc_towarow];
 
-	for (int i = 0; i < ilosc_klientow; i++)
-	{
-		string str[3];
-		podziel_wiersz(str, tablica_linii_klientow[i]);
-		tablica_klientow[i].identyfikator = str[0];
-		id_klienci[i] = str[0];
-		tablica_klientow[i].nazwa = str[1];
-		tablica_klientow[i].miasto = str[2];
-	}
+    for (int i = 0; i < ilosc_klientow; i++)
+    {
+        string str[3];
+	podziel_wiersz(str, tablica_linii_klientow[i]);
+	tablica_klientow[i].identyfikator = str[0];
+	id_klienci[i] = str[0];
+	tablica_klientow[i].nazwa = str[1];
+	tablica_klientow[i].miasto = str[2];
+    }
 
-	if (sprawdz_identyfokatory(id_klienci, ilosc_klientow) == true)
+    if (sprawdz_identyfokatory(id_klienci, ilosc_klientow) == true)
     {
         cout<<"Id klientow powtarzaja sie! Kazde id musi byc unikatowe."<<endl;
         exit(0);
     }
 
-	for (int i = 0; i < ilosc_towarow; i++)
-	{
-		string str[3];
-		podziel_wiersz(str, tablica_linii_towarow[i]);
-		tablica_towarow[i].identyfikator = str[0];
-		id_towary[i] = str[0];
-		tablica_towarow[i].nazwa = str[1];
-		tablica_towarow[i].cena_jedn = str[2];
-	}
+    for (int i = 0; i < ilosc_towarow; i++)
+    {
+        string str[3];
+	podziel_wiersz(str, tablica_linii_towarow[i]);
+	tablica_towarow[i].identyfikator = str[0];
+	id_towary[i] = str[0];
+	tablica_towarow[i].nazwa = str[1];
+	tablica_towarow[i].cena_jedn = str[2];
+    }
 
     if (sprawdz_identyfokatory(id_towary, ilosc_towarow) == true)
     {
@@ -79,14 +79,14 @@ int main()
         exit(0);
     }
 
-	for (int i=0; i<ilosc_transakcji; i++)
-	{
-		string str[3];
-		podziel_wiersz(str, tablica_linii_transakcji[i]);
-		tablica_transakcji[i].identyfikator_klienta = str[0];
-		tablica_transakcji[i].identyfikator_towaru = str[1];
-		tablica_transakcji[i].ilosc = str[2];
-	}
+    for (int i=0; i<ilosc_transakcji; i++)
+    {
+        string str[3];
+	podziel_wiersz(str, tablica_linii_transakcji[i]);
+	tablica_transakcji[i].identyfikator_klienta = str[0];
+	tablica_transakcji[i].identyfikator_towaru = str[1];
+	tablica_transakcji[i].ilosc = str[2];
+    }
 
     wypisz_dane(tablica_klientow, tablica_towarow, tablica_transakcji, ilosc_klientow, ilosc_towarow, ilosc_transakcji);
 
@@ -97,24 +97,24 @@ int main()
 //funkcja wczytuje każdy plik do osobnej tabeli (tutaj: zmienna *tablica), linia po linii i zaznacza, ile każda tabela ma elementów (tutaj: &i)
 void podziel_pliki(string *tablica, string nazwa_pliku, int &i)
 {
-	fstream plik;
-	string linia;
+    fstream plik;
+    string linia;
 
-	plik.open(nazwa_pliku.c_str(), ios::in);
+    plik.open(nazwa_pliku.c_str(), ios::in);
 
-	if(plik.good() == false)
-	{
-		cout<<"Plik nie istnieje.";
-		exit(0);
-	}
+    if(plik.good() == false)
+    {
+	cout<<"Plik nie istnieje.";
+	exit(0);
+    }
 
-	while (getline(plik, linia))
-	{
-		tablica[i] = linia;
-	    i++;
- 	}
+    while (getline(plik, linia))
+    {
+        tablica[i] = linia;
+	i++;
+    }
 
-	plik.close();
+    plik.close();
 };
 
 
