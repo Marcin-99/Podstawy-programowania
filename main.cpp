@@ -90,7 +90,7 @@ int main()
 
     wypisz_dane(tablica_klientow, tablica_towarow, tablica_transakcji, ilosc_klientow, ilosc_towarow, ilosc_transakcji);
 
-	return 0;
+    return 0;
 }
 
 
